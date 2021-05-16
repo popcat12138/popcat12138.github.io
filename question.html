@@ -5,31 +5,76 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>question</title>
+    <link href="css/web.css" rel="stylesheet" >
+    <style>
+         .div1{
+            margin: 0 auto;
+            width: 960px;
+            text-align: center;
+        }   
+        .div0{
+            background-color: rgb(160, 231, 255);
+            margin: 0 auto;
+            width: 960px;
+            text-align: center;
+            color: dodgerblue;
+        }
+        #h1{
+            font-size: 48px;
+        }
+        .div2{
+            background-color: rgb(160, 231, 255);
+            margin: 0 auto;
+            width: 960px;
+            text-align: center;
+            font-size: 12px;
+        }   
+        .label{
+            font-size: 14px;
+            color: rgb(0, 94, 0);
+
+        }
+        .label1{
+            font-size: 14px;
+            color: red;
+        }
+        .float{
+            float: left;
+            color: salmon;
+            background-color: silver;
+        }
+        .float1{
+            float: right;
+        }
+    </style>
 </head>
 <body>
-    <table width="100%">
-       <tr><td height="150" align="center" valign="top"><h1>调查问卷</h1><p style="font-size: 20px;">
-        <a href="index.html">首页</a> &nbsp;&nbsp;
-        <a href="resume.html">个人简历</a>&nbsp;&nbsp;
-        <a href="hobby.html">兴趣爱好</a>&nbsp;&nbsp;
-        <a href="schedule.html">课程表</a>&nbsp;&nbsp;
-        <a href="photo.html">我的照片</a> &nbsp;&nbsp;
-        <a href="question.html">调查问卷</a>&nbsp;&nbsp;
-        <a href="about.html">关于</a>&nbsp;&nbsp;
-        </p>
-        <br>
-        <br>
+    <div class="div0">
+        <h1 class="center">调查问卷</h1><p>
+ <div class="float">
+     <a href="index.html">首页</a> &nbsp;&nbsp;
+     <a href="resume.html">个人简历</a>&nbsp;&nbsp;
+     <a href="hobby.html">兴趣爱好</a>&nbsp;&nbsp;
+     <a href="schedule.html">课程表</a>&nbsp;&nbsp;
+     <a href="photo.html">我的照片</a> &nbsp;&nbsp;
+     <a href="question.html">调查问卷</a>&nbsp;&nbsp;
+     <a href="about.html">关于</a>&nbsp;&nbsp;
+ </div>
+     <div class="float1">欢迎您：***！   <button>注销</button></div>
+     </p>
+     <br>
+     <br>
         <img src="img/1006.gif" width="50" align="center"  >    
-        </td>
-
-       </tr> 
-       <tr><td height="200" align="center" valign="top"><h1>问卷调查</h1>
+        </div>
+    </div> 
+       <div class="div1">
+           <div><h1>问卷调查</h1>
         <form action="1.txt" method="POST">
-        姓名：<input type="text" name="username" id="name" placeholder="例如：张三"><br>
-        性别：<input type="radio" name="sex" id="sex1" value="f" checked="checked">女
+        <label class="label">姓名：</label><input type="text" name="username" id="name" placeholder="例如：张三" class="label1"><br>
+        <label class="label">性别：</label><input type="radio" name="sex" id="sex1" value="f" checked="checked" class="label1">女
         <input type="radio" name="sex" id="sex2" value="m">男<br><br>
-        出生日期：<input type="date" name="birthday" id="birthday" ><br>
-        所在城市：<select name="city" id="city">
+        <label class="label">出生日期：</label><input type="date" name="birthday" id="birthday" class="label1" ><br>
+        <label class="label">所在城市：</label><select name="city" id="city" class="label1">
                 <option value="1">-请选择-</option>
                 <option value="2">北京市</option>
                 <option value="">上海市</option>
@@ -67,26 +112,24 @@
                 <option value="">台湾省</option>
                 <option value="">其它</option>
                 </select><br>
-        手机：<input type="tel" name="phone" id="phone"><br>
-        邮箱：<input type="email" name="email" id="email" ><br>
-        爱好：<input type="checkbox" name="favourite" id="f1" checked>篮球
+        <label class="label">手机：</label><input type="tel" name="phone" id="phone" class="label1"><br>
+        <label class="label">邮箱：</label><input type="email" name="email" id="email" class="label1"><br>
+        <label class="label">爱好：</label><input type="checkbox" name="favourite" id="f1" checked class="label1">篮球
         <input type="checkbox" name="favourite" id="f2" >排球
         <input type="checkbox" name="favourite" id="f3" >乒乓球<br>
-        是否接受网站邮件：<input type="radio" name="judge" id="yes" value="yes" checked="checked">是
+        <label class="label">是否接受网站邮件：</label><input type="radio" name="judge" id="yes" value="yes" checked="checked" class="label1">是
                         <input type="radio" name="judge" id="nope" value="nope">否<br>
-        附加信息：<br><textarea name="memo" id="memo" cols="40" rows="10"></textarea><br>
+        <label class="label">附加信息：</label><br><textarea name="memo" id="memo" cols="40" rows="10" class="label1"></textarea><br>
         <input type="submit" value="提交">
         <input type="reset" value="重置" >
         </form>
-       </td>
-
-       </tr>
-       <tr><td height="200" align="center" valign="top"><h1></h1>
+        </div>
+    </div>
+    <div class="div2">
+        <div><h1></h1>
         <hr width="50%"><br>
         Copyright by 高宇
-       </td>
-
-       </tr>
-    </table>
+        </div>
+    </div>
 </body>
 </html>
