@@ -1,0 +1,13 @@
+
+a{
+    font-size: 24px;
+    text-decoration: none;
+}
+a:link{color: rgb(0, 156, 60);text-decoration: none;}
+a:visited{color: rgb(206, 0, 0);}
+a:hover{color: darkgreen;text-decoration: underline;background: rgb(0, 255, 85);
+font-weight:bold ;}
+a:active{color: yellow;}
+body{
+    background: rgb(183, 255, 233);
+}
