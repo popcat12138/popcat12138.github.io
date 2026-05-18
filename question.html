@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,7 @@
         }
     </style>
 </head>
-<body>
+<body class="page page-question">
     <div class="div0">
         <h1 class="center">调查问卷</h1><p>
  <div class="float">
@@ -67,9 +67,9 @@
         <img src="img/1006.gif" width="50" align="center"  >    
         </div>
     </div> 
-       <div class="div1">
+       <div class="div1 page-content page-question-content">
            <div><h1>问卷调查</h1>
-        <form action="1.txt" method="POST">
+        <form class="question-form" action="1.txt" method="POST">
         <label class="label">姓名：</label><input type="text" name="username" id="name" placeholder="例如：张三" class="label1"><br>
         <label class="label">性别：</label><input type="radio" name="sex" id="sex1" value="f" checked="checked" class="label1">女
         <input type="radio" name="sex" id="sex2" value="m">男<br><br>
@@ -131,5 +131,8 @@
         Copyright by 高宇
         </div>
     </div>
+<script src="js/site.js"></script>
 </body>
 </html>
+
+

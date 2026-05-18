@@ -1,4 +1,4 @@
-:root {
+﻿:root {
     --bg: #edf8f5;
     --paper: #fffdf7;
     --ink: #263330;
@@ -28,6 +28,10 @@ body {
     background:
         radial-gradient(circle at top left, rgba(77, 196, 201, 0.24), transparent 34rem),
         linear-gradient(135deg, var(--bg), #f8fbf0 70%, #f8eee6) !important;
+}
+
+.page {
+    letter-spacing: 0;
 }
 
 a {
@@ -149,6 +153,13 @@ img {
     flex: 0 0 auto !important;
 }
 
+.float a.nav-current {
+    border-color: rgba(22, 133, 141, 0.55);
+    background: rgba(22, 133, 141, 0.14) !important;
+    color: #0d5f66 !important;
+    box-shadow: 0 0 0 2px rgba(22, 133, 141, 0.18) inset;
+}
+
 button,
 input[type="button"],
 input[type="submit"],
@@ -185,6 +196,47 @@ ol {
 
 li {
     margin: 10px 0;
+}
+
+.resume-page .resume-wrap {
+    max-width: 860px;
+    margin: 0 auto;
+}
+
+.resume-page .resume-list {
+    list-style: none;
+    padding: 0;
+    margin: 8px 0 0;
+    display: grid;
+    gap: 14px;
+}
+
+.resume-page .resume-item {
+    margin: 0;
+    padding: 14px 16px;
+    border: 1px solid rgba(22, 133, 141, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.66);
+    box-shadow: 0 10px 22px rgba(24, 60, 56, 0.07);
+}
+
+.resume-page .resume-item::before {
+    content: none !important;
+    display: none !important;
+}
+
+.resume-page .resume-item img {
+    float: left;
+    margin: 2px 12px 8px 0 !important;
+}
+
+.resume-page .resume-item br:last-child {
+    display: none;
+}
+
+.resume-page hr {
+    margin: 2px auto 4px;
+    border-top-color: rgba(22, 133, 141, 0.18);
 }
 
 .div1 > div {
@@ -296,7 +348,7 @@ th[rowspan]::before {
 }
 
 th[rowspan]::after {
-    content: attr(rowspan) " 节";
+    content: attr(rowspan) " \8282";
     position: absolute;
     top: 8px;
     right: 8px;
@@ -383,6 +435,153 @@ th:has(.course9) {
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.18);
 }
 
+.schedule-shell {
+    position: relative;
+}
+
+.schedule-shell::before,
+.schedule-shell::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 26px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.schedule-shell::before {
+    left: 0;
+    background: linear-gradient(90deg, rgba(237, 248, 245, 0.95), transparent);
+}
+
+.schedule-shell::after {
+    right: 0;
+    background: linear-gradient(270deg, rgba(237, 248, 245, 0.95), transparent);
+}
+
+.schedule-scroll {
+    overflow-x: auto;
+    cursor: grab;
+    scrollbar-width: thin;
+}
+
+.schedule-scroll.dragging {
+    cursor: grabbing;
+}
+
+.schedule-scroll::-webkit-scrollbar {
+    height: 10px;
+}
+
+.schedule-scroll::-webkit-scrollbar-thumb {
+    border-radius: 999px;
+    background: rgba(22, 133, 141, 0.38);
+}
+
+.schedule-day-controls {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin: 8px 0 14px;
+}
+
+.schedule-day-controls button {
+    min-width: 74px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.schedule-day-controls button.active {
+    border-color: rgba(22, 133, 141, 0.55);
+    background: rgba(22, 133, 141, 0.14);
+    color: #0d5f66;
+    box-shadow: 0 0 0 2px rgba(22, 133, 141, 0.18) inset;
+}
+
+.schedule-day-panel {
+    margin-top: 10px;
+    border: 1px solid rgba(22, 133, 141, 0.16);
+    border-radius: 8px;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 10px 22px rgba(24, 60, 56, 0.07);
+}
+
+.schedule-day-title {
+    margin: 0 0 10px;
+}
+
+.schedule-day-list {
+    display: grid;
+    gap: 10px;
+}
+
+.schedule-day-item {
+    border: 1px solid rgba(22, 133, 141, 0.18);
+    border-radius: 8px;
+    padding: 10px 12px;
+    background: rgba(255, 255, 255, 0.78);
+}
+
+.schedule-day-item .time {
+    font-weight: 700;
+    color: #145e66;
+    font-size: 14px;
+}
+
+.schedule-day-item .name {
+    font-weight: 700;
+    margin-top: 4px;
+}
+
+.schedule-day-item .meta {
+    color: #4e5f5b;
+    font-size: 14px;
+    margin-top: 3px;
+}
+
+.schedule-day-item .blocks {
+    display: inline-block;
+    margin-top: 6px;
+    padding: 2px 8px;
+    border-radius: 999px;
+    background: rgba(22, 133, 141, 0.12);
+    color: #145e66;
+    font-size: 12px;
+}
+
+.schedule-day-empty {
+    color: #4e5f5b;
+    margin: 0;
+}
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    background: rgba(18, 37, 40, 0.86);
+    z-index: 1200;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+}
+
+.lightbox.open {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.lightbox img {
+    max-width: min(90vw, 1100px);
+    max-height: 88vh;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    box-shadow: 0 20px 52px rgba(0, 0, 0, 0.42);
+}
+
 form,
 .div1 form {
     display: grid;
@@ -410,6 +609,180 @@ hr {
     border-top: 1px solid var(--line);
 }
 
+.page-content > div {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+.page-index-content > div,
+.page-about-content > div,
+.page-photo-content > div,
+.page-schedule-content > div {
+    max-width: 940px;
+}
+
+.page-question-content > div {
+    max-width: 860px;
+}
+
+.page-question-content form {
+    max-width: 760px;
+    margin: 0 auto;
+}
+
+.page-question-content label {
+    font-weight: 600;
+}
+
+.page-about-content p,
+.page-index-content p,
+.page-photo-content p {
+    max-width: 72ch;
+}
+
+.page-hobby-content {
+    display: grid;
+    grid-template-columns: 130px 1fr;
+    gap: 20px;
+    align-items: start;
+}
+
+.page-hobby-content .eight {
+    position: sticky;
+    top: 14px;
+    width: auto !important;
+    float: none !important;
+    text-align: left;
+    line-height: 1.4;
+    font-size: 14px !important;
+}
+
+.hobby-subsection {
+    border: 1px solid rgba(22, 133, 141, 0.16);
+    border-radius: 8px;
+    padding: 16px 18px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 10px 22px rgba(24, 60, 56, 0.07);
+}
+
+.page-hobby-content .hobby-subsection img[width="50"] {
+    width: 44px !important;
+    height: 44px;
+    border-radius: 8px;
+    object-fit: contain;
+    border: 0 !important;
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.page-hobby-content .hobby-subsection img[width="150"],
+.page-hobby-content .hobby-subsection img[width="200"] {
+    width: clamp(180px, 29vw, 230px) !important;
+    height: clamp(130px, 21vw, 168px);
+    object-fit: cover;
+    vertical-align: top;
+}
+
+.page-hobby-content .hobby-subsection h2 {
+    margin-top: 12px;
+    margin-bottom: 8px;
+}
+
+.page-hobby-content .hobby-subsection p {
+    margin-bottom: 14px;
+}
+
+.page-question-content .question-form {
+    display: block !important;
+    padding: 16px 18px;
+    border: 1px solid rgba(22, 133, 141, 0.16);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.62);
+    box-shadow: 0 10px 22px rgba(24, 60, 56, 0.07);
+}
+
+.page-question-content .question-form .label {
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 6px;
+    color: #1f5f5f !important;
+    font-size: 15px;
+}
+
+.page-question-content .question-form .label1 {
+    color: inherit !important;
+}
+
+.page-question-content .question-form input[type="text"],
+.page-question-content .question-form input[type="date"],
+.page-question-content .question-form input[type="tel"],
+.page-question-content .question-form input[type="email"],
+.page-question-content .question-form select,
+.page-question-content .question-form textarea {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 8px;
+    background: rgba(255, 255, 255, 0.88);
+}
+
+.page-question-content .question-form input[type="radio"],
+.page-question-content .question-form input[type="checkbox"] {
+    width: auto;
+    margin: 0 6px 0 0;
+    accent-color: #16858d;
+}
+
+.page-question-content .question-form br {
+    display: block;
+    margin: 6px 0;
+    content: "";
+}
+
+.page-question-content .question-form input[type="submit"],
+.page-question-content .question-form input[type="reset"] {
+    min-width: 100px;
+    margin-top: 10px;
+    margin-right: 8px;
+}
+
+.page-question-content .question-form .field-error {
+    display: block;
+    min-height: 18px;
+    margin: -4px 0 2px;
+    color: #cf2f2f;
+    font-size: 13px;
+}
+
+.page-question-content .question-form .is-invalid {
+    border-color: #cf2f2f !important;
+    box-shadow: 0 0 0 2px rgba(207, 47, 47, 0.12);
+}
+
+.question-status {
+    margin-top: 12px;
+    color: #4e5f5b;
+    font-size: 14px;
+}
+
+.backtop {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    z-index: 1500;
+    border-radius: 999px;
+    min-width: 62px;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(8px);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.backtop.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
 @media (max-width: 760px) {
     .div0,
     .div1,
@@ -428,8 +801,22 @@ hr {
         flex: 0 1 auto !important;
     }
 
+    .page-hobby-content {
+        grid-template-columns: 1fr;
+    }
+
+    .page-hobby-content .eight {
+        position: static;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+        flex-wrap: wrap;
+    }
+
     table {
         display: block;
         overflow-x: auto;
     }
 }
+
+
